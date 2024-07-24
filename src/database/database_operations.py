@@ -1,12 +1,12 @@
 # sqlalchemy database
 from importlib import metadata
-from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, ForeignKey, Boolean # type: ignore
+from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, ForeignKey, Boolean
 import os
 import sys
 from src.res.constants import db_path
 
 metadata = MetaData()
-engine=create_engine('sqlite:///'+res.constants.db_path, echo=True)
+engine=create_engine('sqlite:///'+res.constants.db_path, echo=True) # type: ignore
 table_sentences = Table('sentences', metadata,
               Column('index', Integer, primary_key=True),
               Column('sentence', String),
